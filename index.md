@@ -232,7 +232,7 @@ Now we have the original root filesystem and the copy. We also have the checksum
 ```
 time dd bs=4k count=XXXXX if=/dev/sda | sha1sum
 ```
-Assuming that the checksums are correct, now it is time to encrypt the root filesystem of the SD Card, to create the LUKS volume using ‘cryptsetup’. The are many parameter and possible values for the encryption. This is the command I have chosen:
+Assuming that the checksums are correct, now it is time to encrypt the root filesystem of the SD Card, to create the LUKS volume using ‘cryptsetup’. There are many parameters and possible values for the encryption. This is the command I have chosen:
 ```
 cryptsetup --type luks2 --cipher xchacha20,aes-adiantum-plain64 --hash sha256 --iter-time 5000 –keysize 256 --pbkdf argon2i luksFormat /dev/mmcblk0p2
 ```
