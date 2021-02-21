@@ -238,7 +238,7 @@ cryptsetup --type luks2 --cipher xchacha20,aes-adiantum-plain64 --hash sha256 --
 ```
 More information about the parameters can be found here: <https://man7.org/linux/man-pages/man8/cryptsetup.8.html>
 The command will ask for a passphrase twice (for confirmation). It is important that the passphrase is long and uses different characters sets (letter, numbers, symbols, uppercase, lower case, etc.).
-After creating th LUKS volumen, we have to open it and copy the content of the root filesystem into it. The command to open the LUKS volume is:
+After creating the LUKS volumen, we have to open it and copy the content of the root filesystem into it. The command to open the LUKS volume is:
 ```
 cryptsetup luksOpen /dev/mmcblk0p2 sdcard
 ```
