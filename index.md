@@ -118,7 +118,7 @@ The file should be made executable:
 ```
 sudo chmod +x /etc/initramfs-tools/hooks/luks_hooks
 ```
-‘initramfs’ does not include kernel modules for LUKS and encryption. We need to configure the kernel modules to add. This file has to be edited:
+‘initramfs’ for Raspbian does not include kernel modules for LUKS and encryption by default. We need to configure the kernel modules to add. This file has to be edited:
 ```
 /etc/initramfs-tools/modules
 ```
