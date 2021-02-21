@@ -242,7 +242,7 @@ After creating the LUKS volumen, we have to open it and copy the content of the 
 ```
 cryptsetup luksOpen /dev/mmcblk0p2 sdcard
 ```
-It will ask the passphrase we chose in the previous stage. Once opened, we copy the root filesystem in the USB memory into the encrypted volume (remember to substitute ‘XXXXX’ with the number of 4k blocks you got after resizing the filesystem):
+It will ask the passphrase chosen in the previous stage. Once opened, we copy the root filesystem in the USB memory into the encrypted volume (remember to substitute ‘XXXXX’ with the number of 4k blocks you got after resizing the filesystem):
 ```
 time dd bs=4k count=XXXXX if=/dev/sda of=/dev/mapper/sdcard
 ```
