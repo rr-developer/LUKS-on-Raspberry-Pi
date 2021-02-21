@@ -221,7 +221,7 @@ Connect now the USB memory to the Raspberry Pi. Some information about the USB m
 ```
 fdisk -l /dev/sda
 ```
-We are going to use the whole memory, /dev/sda, but it is possible to mount the memory and create the copy of the root filesystem in the SD Card in a file of the mounted filesystem, rather than in the device.
+We are going to use the whole USB memory, /dev/sda.
 This operation will copy the root filesystem of the SD Card into the USB memory device, deleting all its content (remember to substitute ‘XXXXX’ with the number of 4k blocks you got after resizing the filesystem):
 ```
 time dd bs=4k count=XXXXX if=/dev/mmcblk0p2 of=/dev/sda
