@@ -39,6 +39,7 @@ sudo modprobe adiantum
 sudo modprobe nhpoly1305
 ```
 If ‘modprobe’ complains about the module not being found, the kernel module is not present. A possible cause can be that the kernel version is not 5.0 or later.
+
 You can check AES and see the speed difference with Adiantum:
 ```
 # Tests are approximate using memory only (no storage IO).
