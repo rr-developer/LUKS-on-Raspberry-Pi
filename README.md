@@ -1,5 +1,5 @@
 # LUKS-on-Raspberry-Pi
-Guide to perform a full disk encryption of the SD Card of a Raspberry Pi that uses Raspian.
+### Guide to perform a full disk encryption of the SD Card of a Raspberry Pi that uses Raspian.
 
 Read this guide at GitHub pages:
 
