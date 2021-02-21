@@ -272,3 +272,4 @@ sudo cp /tmp/initramfs.gz /boot/initramfs.gz
 
 After rebooting, a prompt message should appear, something like “Please unlock disk...”. Perhaps the prompt asking for a password will get lost between some star-up messages, but you can enter your passphrase anyway and it should work.
 
+
