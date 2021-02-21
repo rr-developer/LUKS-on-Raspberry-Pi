@@ -236,7 +236,7 @@ Assuming that the checksums are correct, now it is time to encrypt the root file
 ```
 cryptsetup --type luks2 --cipher xchacha20,aes-adiantum-plain64 --hash sha256 --iter-time 5000 –keysize 256 --pbkdf argon2i luksFormat /dev/mmcblk0p2
 ```
-More information about the parameters can be found here: https://man7.org/linux/man-pages/man8/cryptsetup.8.html
+More information about the parameters can be found here: <https://man7.org/linux/man-pages/man8/cryptsetup.8.html>
 The command will ask for a passphrase twice (for confirmation). It is important that the passphrase is long and uses different characters sets (letter, numbers, symbols, uppercase, lower case, etc.).
 After creating th LUKS volumen, we have to open it and copy the content of the root filesystem into it. The command to open the LUKS volume is:
 ```
