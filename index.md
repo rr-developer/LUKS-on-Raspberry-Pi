@@ -1,5 +1,8 @@
 ## LUKS on Raspberry Pi
 
+> ***Last updated: February 2021.***
+
+
 This guide explains how to encrypt the root partition of an SD Card with Raspbian with LUKS. The process requires a Raspberry Pi running Raspbian on the SD Card and a USB memory stick with the same capacity as the SD Card at least. It is important to have a backup of the SD Card, in case anything goes wrong, because it will be overwritten, and of the USB memory as well.
 
 Full disk encryption is quite easy to perform with modern Linux distributions. Raspberry Pi is an exception because the boot partition does not include most of the needed programs and kernel modules. On the other hand, it is important to use disk encryption with Raspberry Pi because the SD card can be extracted from the unit and its content read quite easily.
