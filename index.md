@@ -151,12 +151,14 @@ lsinitramfs /boot/initramfs.gz | grep -P "(algif_skcipher|chacha|adiantum|aes-ar
 We need to modify some files before rebooting the Rasperry Pi. These changes are meant to tell the boot process to use an encrypted root filesystem. After the previous changes, the Raspberry Pi will boot correctly. After changing the following files, the Raspberry Pi will not boot to Desktop until the whole process of encrypting the root partition and configuring LUKS is completed. If after modifying the next four files and before the root partition is encrypted anything goes wrong, the changes in the four files can be reverted and the Raspberry Pi would boot normally. It is a good idea to make a copy of those file before modifying them.
 
 **File: /boot/config.txt**
+
 The next line has to be appended at the end of the file:
 ```
 initramfs initramfs.gz followkernel
 ```
 
 **File: /boot/cmdline.txt**
+
 It contains one line with parameters. One of them is ‘root’, that specifies the location of the root partition. For Raspberry Pi is usually ‘/dev/mmcblk0p2’, but it can also be other device (or the same) specified as “PARTUUID=xxxxx”. The value of ‘root’ has to be change to ‘/dev/mapper/sdcard’. For example, if ‘root’ is:
 ```
 root=/dev/mmcblk0p2
@@ -171,6 +173,7 @@ cryptdevice=/dev/mmcblk0p2:sdcard
 ```
 
 **File: /etc/fstab**
+
 The device for root partition (‘/’) should be changed to the mapper.
 For example, if the device for root is:
 ```
@@ -182,6 +185,7 @@ it should be changed to:
 ```
 
 **File: etc/crypttab**
+
 At the end of the file a new line should be appended with the next content:
 ```
 sdcard	/dev/mmcblk0p2	none	luks
