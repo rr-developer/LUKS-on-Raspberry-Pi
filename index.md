@@ -157,7 +157,7 @@ initramfs initramfs.gz followkernel
 ```
 
 **File: /boot/cmdline.txt**
-It contains one line with parameters. One of then is ‘root’, that specifies the location of the root partition. For Raspberry Pi is usually ‘/dev/mmcblk0p2’, but it can also be other device (or the same) specified as “PARTUUID=xxxxx”. The value of ‘root’ has to be change to ‘/dev/mapper/sdcard’. For example, if ‘root’ is:
+It contains one line with parameters. One of them is ‘root’, that specifies the location of the root partition. For Raspberry Pi is usually ‘/dev/mmcblk0p2’, but it can also be other device (or the same) specified as “PARTUUID=xxxxx”. The value of ‘root’ has to be change to ‘/dev/mapper/sdcard’. For example, if ‘root’ is:
 ```
 root=/dev/mmcblk0p2
 ```
