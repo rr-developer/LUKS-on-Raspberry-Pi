@@ -6,11 +6,11 @@ Full disk encryption is quite easy to perform with modern Linux distributions. R
 
 ### Requirements
 
-Linux kernel 5.0 or later. You can check it with command:
+Linux kernel 5.0 or later. You can check it with this command:
 ```
 uname -s -r
 ```
-cryptsetup 2.0.6 or later. You cab check it with command:
+cryptsetup 2.0.6 or later. You can check it with this command:
 ```
 cryptsetup --version
 ```
