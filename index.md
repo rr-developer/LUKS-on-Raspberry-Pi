@@ -21,7 +21,7 @@ You should install the programs needed:
 ```
 sudo apt install busybox cryptsetup initramfs-tools
 ```
-The microprocessors of Raspberry Pi computers do not include a AES acceleration. That means that a software implementation of AES is needed, which is slow with modest hardware. Fortunately, there is a recent alternative, Adiantum, that runs fast in software.
+The microprocessors of Raspberry Pi computers do not include AES acceleration. That means that a software implementation of AES is needed, which is slow with modest hardware. Fortunately, there is a recent alternative, Adiantum, that runs fast in software.
 Linux kernel 5.0 or later includes the cryptographic kernel modules needed for Adiantum. You can check that every module is present and loaded with this command:
 ```
 cryptsetup benchmark -c xchacha20,aes-adiantum-plain64
