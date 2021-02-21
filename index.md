@@ -114,7 +114,7 @@ The file should be made executable:
 ```
 sudo chmod +x /etc/initramfs-tools/hooks/luks_hooks
 ```
-‘initramfs’ does not include kernel modules for LUKS and encryption. We need to configure the kernel modules to add. This file have to be edited:
+‘initramfs’ does not include kernel modules for LUKS and encryption. We need to configure the kernel modules to add. This file has to be edited:
 ```
 /etc/initramfs-tools/modules
 ```
