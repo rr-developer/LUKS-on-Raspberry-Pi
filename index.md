@@ -49,7 +49,7 @@ aes-xts        256b        88.7 MiB/s        86.2 MiB/s
 
 ### Preparing Linux
 
-‘initramfs’ has to be recreated when a new kernel is installed. We need to create a new file:
+‘initramfs’ has to be recreated when a new kernel is installed or just now that we have to change its configuration. We need to create a new file:
 ```
 /etc/kernel/postinst.d/initramfs-rebuild
 ```
