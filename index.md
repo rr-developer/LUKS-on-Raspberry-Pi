@@ -91,9 +91,7 @@ The file should be made executable:
 sudo chmod +x /etc/kernel/postinst.d/initramfs-rebuild
 ```
 We also need to specify some programs that need to be included in ‘initramfs’. We do that with a new file at:
-```
-/etc/initramfs-tools/hooks/luks_hooks
-```
+> /etc/initramfs-tools/hooks/luks_hooks
 and it should have this content:
 ```bash
 #!/bin/sh -e
@@ -114,9 +112,7 @@ The file should be made executable:
 sudo chmod +x /etc/initramfs-tools/hooks/luks_hooks
 ```
 ‘initramfs’ does not include kernel modules for LUKS and encryption. We need to configure the kernel modules to add. This file has to be edited:
-```
-/etc/initramfs-tools/modules
-```
+> /etc/initramfs-tools/modules
 and the following lines added:
 ```
 algif_skcipher
