@@ -212,7 +212,7 @@ An example of the output of the program is:
 Resizing the filesystem on /dev/mmcblk0p2 to 2345678 (4k) blocks.
 ```
 The number to take note of is ‘2345678’ in the example.
-Once the resizing is finished we are going to get a checksum value of the whole partition. We will do the same after every copy operation between SD card and USB memory. Id the checksum is the same, the copy will be equal. Let’s create the checksum for the root partition to copy. Remember to substitute ‘XXXXX’ with the number of 4k blocks you got after resizing the filesystem. It is useful to add “time ” before “dd” to obtain how long it takes the operation. When the rest of checksums are calculate it, it allows to know, more or less, how much time I will take:
+Once the resizing is finished we are going to get a checksum value of the whole partition. We will do the same after every copy operation between SD card and USB memory. If the checksum is the same, the copy will be equal. Let’s create the checksum for the root partition to copy. Remember to substitute ‘XXXXX’ with the number of 4k blocks you got after resizing the filesystem. It is useful to add “time ” before “dd” to obtain how long it takes the operation. When the rest of checksums are calculate it, it allows to know, more or less, how much time I will take:
 ```
 time dd bs=4k count=XXXXX if=/dev/mmcblk0p2 | sha1sum
 ```
