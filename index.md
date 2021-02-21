@@ -272,7 +272,7 @@ exit
 ```
 
 ### Booting
-We do not want to enter into initramfs shell every time we switch on our Raspberry Pi. We can make Raspbian ask for the password and that’s it. For that, we need to build initramfs once more and reboot:
+We do not want to enter into initramfs shell every time we switch on our Raspberry Pi. We can make Raspbian ask for the password. What we need for that is building initramfs once more and reboot:
 ```
 sudo mkinitramfs -o /tmp/initramfs.gz
 sudo cp /tmp/initramfs.gz /boot/initramfs.gz
