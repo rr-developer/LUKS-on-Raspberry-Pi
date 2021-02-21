@@ -122,7 +122,7 @@ sudo chmod +x /etc/initramfs-tools/hooks/luks_hooks
 ```
 /etc/initramfs-tools/modules
 ```
-and the following lines added:
+and the following lines with the names of kernel modules added:
 ```
 algif_skcipher
 xchacha20
