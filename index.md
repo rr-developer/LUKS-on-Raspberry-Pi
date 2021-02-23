@@ -268,7 +268,7 @@ The boot process will enter into initramfs shell again. At this moment we have t
 ```
 cryptsetup luksOpen /dev/mmcblk0p2 sdcard
 ```
-After opening the LUKS volumen we have to exit again and Raspian will start normally:
+After opening the LUKS volumen we have to exit again and Raspberry Pi OS will start normally:
 ```
 exit
 ```
