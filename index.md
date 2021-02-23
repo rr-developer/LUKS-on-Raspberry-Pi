@@ -3,7 +3,7 @@
 ***Last updated: February 2021.***
 
 
-This guide explains how to encrypt the root partition of an SD Card with Raspbian with LUKS. The process requires a Raspberry Pi running Raspbian on the SD Card and a USB memory with the same capacity as the SD Card at least. It is important to have a backup of the SD Card, in case anything goes wrong, because it will be overwritten, and of the USB memory as well.
+This guide explains how to encrypt the root partition of an SD Card with Raspberry Pi OS with LUKS. The process requires a Raspberry Pi running Raspberry Pi OS on the SD Card and a USB memory with the same capacity as the SD Card at least. It is important to have a backup of the SD Card, in case anything goes wrong, because it will be overwritten, and of the USB memory as well.
 
 Full disk encryption is quite easy to perform with modern Linux distributions. Raspberry Pi is an exception because the boot partition does not include most of the needed programs and kernel modules. On the other hand, it is important to use disk encryption with Raspberry Pi because the SD card can be extracted from the unit and its content read quite easily.
 
@@ -118,7 +118,7 @@ The file should be made executable:
 ```
 sudo chmod +x /etc/initramfs-tools/hooks/luks_hooks
 ```
-‘initramfs’ for Raspbian does not include kernel modules for LUKS and encryption by default. We need to configure the kernel modules to add. This file has to be edited:
+‘initramfs’ for Raspberry Pi OS does not include kernel modules for LUKS and encryption by default. We need to configure the kernel modules to add. This file has to be edited:
 ```
 /etc/initramfs-tools/modules
 ```
@@ -191,7 +191,7 @@ At the end of the file a new line should be appended with the next content:
 sdcard	/dev/mmcblk0p2	none	luks
 ```
 
-Everything is ready now to reboot. After rebooting, Raspbian will fail to start because we have configured a root partition that does not exist yet. After several equal messages indicating the failure, the ‘initramfs’ shell will show.
+Everything is ready now to reboot. After rebooting, Raspberry Pi OS will fail to start because we have configured a root partition that does not exist yet. After several equal messages indicating the failure, the ‘initramfs’ shell will show.
 
 ### Encrypting the root partition
 
@@ -274,7 +274,7 @@ exit
 ```
 
 ### Booting
-We do not want to enter into initramfs shell every time we switch on our Raspberry Pi. We can make Raspbian ask for the password. What we need for that is building initramfs once more and reboot:
+We do not want to enter into initramfs shell every time we switch on our Raspberry Pi. We can make Raspberry Pi OS ask for the password. What we need for that is building initramfs once more and reboot:
 ```
 sudo mkinitramfs -o /tmp/initramfs.gz
 sudo cp /tmp/initramfs.gz /boot/initramfs.gz
