@@ -234,7 +234,7 @@ time dd bs=4k count=XXXXX if=/dev/sda | sha1sum
 ```
 Assuming that the checksums are correct, now it is time to encrypt the root filesystem of the SD Card, to create the LUKS volume using ‘cryptsetup’. There are many parameters and possible values for the encryption. This is the command I have chosen:
 ```
-cryptsetup --type luks2 --cipher xchacha20,aes-adiantum-plain64 --hash sha256 --iter-time 5000 –keysize 256 --pbkdf argon2i luksFormat /dev/mmcblk0p2
+cryptsetup --type luks2 --cipher xchacha20,aes-adiantum-plain64 --hash sha256 --iter-time 5000 --key-size 256 --pbkdf argon2i luksFormat /dev/mmcblk0p2
 ```
 More information about the parameters can be found here:
 <https://man7.org/linux/man-pages/man8/cryptsetup.8.html>
