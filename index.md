@@ -1,6 +1,6 @@
 ## LUKS on Raspberry Pi
 
-***Last updated: February 2021.***
+***Last updated: October 2021.***
 
 
 This guide explains how to encrypt the root partition of an SD Card with Raspberry Pi OS with LUKS. The process requires a Raspberry Pi running Raspberry Pi OS on the SD Card and a USB memory with the same capacity as the SD Card at least. It is important to have a backup of the SD Card, in case anything goes wrong, because it will be overwritten, and of the USB memory as well.
@@ -109,6 +109,7 @@ esac
 
 . /usr/share/initramfs-tools/hook-functions
 
+copy_exec /usr/lib/aarch64-linux-gnu/libgcc_s.so.1 /usr/lib
 copy_exec /sbin/resize2fs /sbin
 copy_exec /sbin/fdisk /sbin
 copy_exec /sbin/cryptsetup /sbin
@@ -184,7 +185,7 @@ it should be changed to:
 /dev/mapper/sdcard
 ```
 
-**File: etc/crypttab**
+**File: /etc/crypttab**
 
 At the end of the file a new line should be appended with the next content:
 ```
@@ -234,7 +235,7 @@ time dd bs=4k count=XXXXX if=/dev/sda | sha1sum
 ```
 Assuming that the checksums are correct, now it is time to encrypt the root filesystem of the SD Card, to create the LUKS volume using ‘cryptsetup’. There are many parameters and possible values for the encryption. This is the command I have chosen:
 ```
-cryptsetup --type luks2 --cipher xchacha20,aes-adiantum-plain64 --hash sha256 --iter-time 5000 –keysize 256 --pbkdf argon2i luksFormat /dev/mmcblk0p2
+cryptsetup --type luks2 --cipher xchacha20,aes-adiantum-plain64 --hash sha256 --iter-time 5000 --key-size 256 --pbkdf argon2i luksFormat /dev/mmcblk0p2
 ```
 More information about the parameters can be found here:
 <https://man7.org/linux/man-pages/man8/cryptsetup.8.html>
